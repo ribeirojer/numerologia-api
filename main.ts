@@ -5,6 +5,10 @@ import { NumerologiaData } from "./src/types.ts";
 const app = new Application();
 const router = new Router();
 
+router.get("/", (ctx) => {
+  ctx.response.body = "Bem-vindo à API de Numerologia!";
+});
+
 router.post("/api/save", async (ctx) => {
   try {
     const data = await ctx.request.body.json() as NumerologiaData;
