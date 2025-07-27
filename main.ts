@@ -13,8 +13,8 @@ router.get("/", (ctx) => {
 router.post("/api/save", async (ctx) => {
   try {
     const data = await ctx.request.body.json() as NumerologiaData;
-    
-    const requiredFields = ["name", "birthdate", "numeroDaVida", "numerologiaNome"];
+
+    const requiredFields = ["name", "birthdate", "numeroDoDestino", "numerologiaNome"];
     for (const field of requiredFields) {
       if (!data[field as keyof NumerologiaData]) {
         ctx.response.status = 400;
@@ -28,7 +28,7 @@ router.post("/api/save", async (ctx) => {
     .insert([{
       nome: data.name,
       data_nascimento: data.birthdate,
-      numero_da_vida: data.numeroDaVida,
+      numero_da_vida: data.numeroDoDestino,
       numerologia_nome: data.numerologiaNome
     }])
     .select("*");

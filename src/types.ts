@@ -1,6 +1,6 @@
 export interface NumerologiaData {
     name: string;
     birthdate: string;
-    numeroDaVida: number;
+    numeroDoDestino: number;
     numerologiaNome: string;
 }
