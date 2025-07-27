@@ -1,6 +1,7 @@
 import { Application, Router } from "jsr:@oak/oak";
 import { supabase } from "./src/supabase.ts";
 import { NumerologiaData } from "./src/types.ts";
+import { oakCors } from "https://deno.land/x/cors/mod.ts";
 
 const app = new Application();
 const router = new Router();
@@ -47,6 +48,7 @@ router.post("/api/save", async (ctx) => {
   }
 });
 
+app.use(oakCors());
 app.use(router.routes());
 app.use(router.allowedMethods());
 

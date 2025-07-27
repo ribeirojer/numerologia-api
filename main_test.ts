@@ -8,7 +8,7 @@ Deno.test(async function addTest() {
     numerologiaNome: "Test",
   };
 
-  const response = await fetch("http://localhost:8000/api/save", {
+  const response = await fetch("https://numerologia-79.deno.dev/api/save", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
