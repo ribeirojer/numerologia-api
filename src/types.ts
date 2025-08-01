@@ -1,6 +1,6 @@
 export interface NumerologiaData {
-    name: string;
-    birthdate: string;
-    numeroDoDestino: number;
-    numerologiaNome: string;
+  name: string;
+  birthdate: string;
+  numeroDoDestino: number;
+  numerologiaNome: string;
 }
