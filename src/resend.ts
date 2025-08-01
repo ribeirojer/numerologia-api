@@ -1,11 +1,4 @@
-import { load } from "https://deno.land/std@0.224.0/dotenv/mod.ts";
-const env = await load();
-
-const resendApiKey = env.RESEND_API_KEY || Deno.env.get("RESEND_API_KEY")!;
-
-if (!resendApiKey) {
-  throw new Error("RESEND_API_KEY is not set");
-}
+import { resendApiKey } from "./config.ts";
 
 export const sendContactEmail = async (to: string[], html: string) => {
   const response = await fetch("https://api.resend.com/emails", {
