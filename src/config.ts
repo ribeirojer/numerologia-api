@@ -4,7 +4,6 @@ const env = await load();
 // Configuração do cliente Supabase
 const supabaseUrl = env.SUPABASE_URL || Deno.env.get("SUPABASE_URL")!;
 const supabaseKey = env.SUPABASE_KEY || Deno.env.get("SUPABASE_KEY")!;
-const resendApiKey = env.RESEND_API_KEY || Deno.env.get("RESEND_API_KEY")!;
 
 if (!supabaseUrl) {
   throw new Error("SUPABASE_URL is not set");
@@ -14,8 +13,4 @@ if (!supabaseKey) {
   throw new Error("SUPABASE_KEY is not set");
 }
 
-if (!resendApiKey) {
-  throw new Error("RESEND_API_KEY is not set");
-}
-
-export { resendApiKey, supabaseKey, supabaseUrl };
+export { supabaseKey, supabaseUrl };
